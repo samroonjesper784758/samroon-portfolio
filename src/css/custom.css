@@ -1,0 +1,6 @@
+@media (max-width: 810px) and (min-width: 768px) {
+  .custom-break-point {
+    flex-wrap: wrap;
+    justify-content: center
+  }
+}
