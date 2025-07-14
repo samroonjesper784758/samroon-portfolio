@@ -25,7 +25,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href={`/${process.env.NEXT_PUBLIC_REPO_NAME}/favicon.ico`} />
+        <link
+          rel="icon"
+          href={
+            process.env.NEXT_PUBLIC_ENV === "development"
+              ? `/favicon.ico`
+              : `/${process.env.NEXT_PUBLIC_REPO_NAME}/favicon.ico`
+          }
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
