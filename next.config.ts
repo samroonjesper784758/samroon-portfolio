@@ -1,8 +1,15 @@
-import type { NextConfig } from "next";
+const isProd = process.env.NEXT_PUBLIC_ENV === 'production';
+const repoName = process.env.NEXT_PUBLIC_REPO_NAME || '';
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  devIndicators: false,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  distDir: 'out',
+  images: {
+    unoptimized: true,
+  },
+  assetPrefix: isProd ? `/${repoName}/` : '',
+  basePath: isProd ? `/${repoName}` : '',
 };
 
-export default nextConfig;
+module.exports = nextConfig;
