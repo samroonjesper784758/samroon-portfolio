@@ -30,16 +30,20 @@ function ContactMe() {
 
   const handleSumbit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
-    console.log(data);
+      const data = await response.json();
+      alert("Message sent");
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -56,7 +60,9 @@ function ContactMe() {
           />
         </div>
         <div className="md:col-span-6 col-span-12">
-          <p className="sm:text-2xl text-xl font-bold text-headingColor">Let's Get In Touch</p>
+          <p className="sm:text-2xl text-xl font-bold text-headingColor">
+            Let's Get In Touch
+          </p>
           <p className="sm:text-[1rem] text-[0.875rem] font-medium mb-[1rem] text-paragraphColor">
             Or reach out manually{" "}
             <span className="text-[#4F46E5]">samroon1510@gmail.com</span>
