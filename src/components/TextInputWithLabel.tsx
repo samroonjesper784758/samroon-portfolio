@@ -7,9 +7,9 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 const TextInputWithLabel: React.FC<Props> = ({ title, ...props }) => {
   return (
     <div className="w-full">
-      <p className="sm:text-lg text-[1rem]  font-bold mb-1">{title}</p>
+      <p className="sm:text-lg text-[1rem]  font-bold mb-1 text-headingColor">{title}</p>
       <input
-        className="rounded-full px-[1rem] py-[0.5rem] w-full outline-none border border-gray-300 placeholder:text-[1rem]"
+        className="rounded-full px-[1rem] py-[0.5rem] w-full outline-none border border-gray-300 placeholder:text-[1rem] placeholder:text-paragraphColor"
         type="text"
         {...props}
       />

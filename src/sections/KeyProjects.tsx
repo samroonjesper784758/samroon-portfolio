@@ -40,7 +40,7 @@ export default function KeyProjects() {
 
   return (
     <div className="w-[95%] mx-auto flex flex-col gap-3">
-      <p className="sm:text-2xl text-xl font-semibold">🚀 Key Projects</p>
+      <p className="sm:text-2xl text-xl font-semibold text-headingColor">🚀 Key Projects</p>
       <div className="grid grid-cols-12 gap-5">
         {projects.map((item, index) => {
           return (
@@ -63,7 +63,7 @@ export default function KeyProjects() {
                   ) : (
                     <SnackOut />
                   )}
-                  <div className="text-xl font-bold">{item.title}</div>
+                  <div className="text-xl font-bold text-headingColor">{item.title}</div>
                 </div>
                 <a
                   href={
@@ -77,7 +77,7 @@ export default function KeyProjects() {
                   <OpenLink fill={index === 0 ? "#34b44ad9" : "#a796e4d9"} />
                 </a>
               </div>
-              <p className="text-[1rem] font-medium text-justify">
+              <p className="text-[1rem] font-medium text-justify text-paragraphColor">
                 {item.description}
               </p>
               <DisplaySkills

@@ -23,9 +23,9 @@ export default function Navbar() {
   };
 
   return (
-    <div className="shadow-md bg-white fixed left-0 right-0 opacity-90 z-20">
+    <div className="shadow-md bg-white fixed left-0 right-0 z-20">
       <div className="h-[3.75rem] flex flex-row items-center justify-between w-[95%] mx-auto custom-break-point">
-        <div className="md:text-2xl text-xl text-[#4F46E5] font-bold">Samroon Jesper</div>
+        <div className="md:text-2xl text-xl text-primaryColor font-bold">Samroon Jesper</div>
 
         <div
           className={`
@@ -39,7 +39,7 @@ export default function Navbar() {
           {links.map((item) => {
             return (
               <div key={item.label.toString()} className="disc-none">
-                <a onClick={toggleNavLinks} href={`#${item.target}`}>{item.label}</a>
+                <a className="text-secondaryColor" onClick={toggleNavLinks} href={`#${item.target}`}>{item.label}</a>
               </div>
             );
           })}

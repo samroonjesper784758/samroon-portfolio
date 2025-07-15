@@ -14,14 +14,14 @@ export default function Intro() {
 
   return (
     <div className="flex flex-col items-center gap-5 mt-[5rem]">
-      <div className="max-h-[12rem] max-w-[12rem] bg-[#4F46E5] rounded-full shadow-md flex items-center justify-center overflow-hidden">
+      <div className="max-h-[12rem] max-w-[12rem] bg-primaryColor rounded-full shadow-md flex items-center justify-center overflow-hidden">
         <img className="w-full h-auto object-cover" src={assetsImage.Profile.src} alt="profile"/>
       </div>
       <div className="flex flex-col gap-2 w-full">
         <div className="sm:text-2xl text-xl font-semibold text-center">
-          I'm <span className="text-[#4F46E5]">Samroon Jesper</span>
+          I'm <span className="text-primaryColor">Samroon Jesper</span>
         </div>
-        <div className="sm:text-2xl text-xl text-center">and I'm a {displayText}|</div>
+        <div className="sm:text-2xl text-xl text-center text-headingColor">and I'm a {displayText}|</div>
       </div>
     </div>
   );

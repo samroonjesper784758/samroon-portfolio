@@ -1,5 +1,4 @@
 import React from 'react'
-import CopyRight from '../assets/svgs/CopyRight'
 
 function Footer() {
   return (

@@ -44,7 +44,7 @@ function ContactMe() {
 
   return (
     <div className="w-[95%] mx-auto">
-      <p className="md:text-3xl sm:text-2xl text-xl font-semibold mb-10">
+      <p className="md:text-3xl sm:text-2xl text-xl font-semibold mb-10 text-headingColor">
         📮 Contact Me
       </p>
       <div className="grid grid-cols-12">
@@ -56,8 +56,8 @@ function ContactMe() {
           />
         </div>
         <div className="md:col-span-6 col-span-12">
-          <p className="sm:text-2xl text-xl font-bold">Let's Get In Touch</p>
-          <p className="sm:text-[1rem] text-[0.875rem] font-medium mb-[1rem]">
+          <p className="sm:text-2xl text-xl font-bold text-headingColor">Let's Get In Touch</p>
+          <p className="sm:text-[1rem] text-[0.875rem] font-medium mb-[1rem] text-paragraphColor">
             Or reach out manually{" "}
             <span className="text-[#4F46E5]">samroon1510@gmail.com</span>
           </p>

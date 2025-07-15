@@ -16,7 +16,7 @@ export default function Education() {
 
   return (
     <div className="flex flex-col w-[95%] mx-auto bg-[#ffffff]">
-      <p className="sm:text-2xl text-xl font-semibold mb-3">🎓Education</p>
+      <p className="sm:text-2xl text-xl font-semibold mb-3 text-headingColor">🎓Education</p>
       {education_history.map((item, index) => {
         return (
           <div
@@ -26,9 +26,9 @@ export default function Education() {
             }`}
           >
             <div className="flex flex-col gap-2">
-              <p className="sm:text-xl text-[1rem] font-semibold">{item.institude}</p>
-              <p className="sm:text-xl text-[1rem] font-medium">{item.degree}</p>
-              <p className="sm:text-xl text-[1rem] font-medium">{item.year}</p>
+              <p className="sm:text-xl text-[1rem] font-semibold text-headingColor">{item.institude}</p>
+              <p className="sm:text-xl text-[1rem] font-medium text-paragraphColor">{item.degree}</p>
+              <p className="sm:text-xl text-[1rem] font-medium text-paragraphColor">{item.year}</p>
             </div>
           </div>
         );

@@ -22,9 +22,9 @@ const DisplaySkills: React.FC<Props> = ({
         return (
           <div
             key={index}
-            className="py-[0.3125rem] px-[0.6rem] border border-[#000000] rounded-full"
+            className="py-[0.3125rem] px-[0.6rem] border border-headingColor rounded-full"
           >
-            <p className="md:text-[1rem] text-sm font-medium text-[#000000]">{item}</p>
+            <p className="md:text-[1rem] text-sm font-medium text-headingColor">{item}</p>
           </div>
         );
       })}

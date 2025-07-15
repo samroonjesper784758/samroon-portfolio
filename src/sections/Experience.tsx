@@ -66,22 +66,22 @@ export default function Experience() {
   return (
     <div className="w-[95%] mx-auto grid grid-cols-12">
       <div className="md:col-span-6 col-span-12 p-5 flex flex-col gap-3 justify-center">
-        <p className="sm:text-2xl text-xl font-semibold text-center">
+        <p className="sm:text-2xl text-xl font-semibold text-center text-headingColor">
           🛠️ Technical Skills
         </p>
-        <p className="text-[1rem] font-medium mb-5 text-center">
+        <p className="text-[1rem] font-medium mb-5 text-center text-paragraphColor">
           Below are the Tools and Technologies I Used:
         </p>
         <DisplaySkills skills={gained_skills} />
       </div>
-      <div className="md:col-span-6 col-span-12 p-5 border-l-4 border-[#4F46E5] rounded flex flex-col gap-3 bg-white shadow-md">
-        <p className="sm:text-2xl text-xl font-semibold">
+      <div className="md:col-span-6 col-span-12 p-5 border-l-4 border-primaryColor rounded flex flex-col gap-3 bg-white shadow-md">
+        <p className="sm:text-2xl text-xl font-semibold text-headingColor">
           🧑‍💻 My Professional Experience
         </p>
         <div>
           <div className="sm:flex flex-row items-center justify-between mb-5">
-            <p className="md:text-xl text-lg font-bold">RhodiumTech</p>
-            <p className="md:text-xl text-lg font-bold">
+            <p className="md:text-xl text-lg font-bold text-headingColor">RhodiumTech</p>
+            <p className="md:text-xl text-lg font-bold text-headingColor">
               July 2023 - May 2023
             </p>
           </div>
@@ -89,7 +89,7 @@ export default function Experience() {
             <ul className="list-disc list-inside space-y-2">
               {experience_points.map((point, index) => {
                 return (
-                  <li className="md:text-lg text-md font-medium text-justify" key={index}>
+                  <li className="md:text-lg text-md font-medium text-justify text-headingColor" key={index}>
                     {point}
                   </li>
                 );

@@ -18,7 +18,7 @@ export default function CourseAndCertification() {
   return (
     <div className="w-[95%] mx-auto grid grid-cols-12 md:gap-0 gap-5">
       <div className="md:col-span-6 col-span-12">
-        <p className="sm:text-2xl text-xl font-semibold mb-3">
+        <p className="sm:text-2xl text-xl font-semibold mb-3 text-headingColor">
           🏅 Course & Certification
         </p>
 
@@ -31,13 +31,13 @@ export default function CourseAndCertification() {
               }`}
             >
               <div className="flex flex-col gap-2">
-                <p className="sm:text-xl text-[1rem] font-semibold">
+                <p className="sm:text-xl text-[1rem] font-semibold text-headingColor">
                   {item.institute}
                 </p>
-                <p className="sm:text-xl text-[1rem] font-medium">
+                <p className="sm:text-xl text-[1rem] font-medium text-paragraphColor">
                   {item.course}
                 </p>
-                <p className="sm:text-xl text-[1rem] font-medium">
+                <p className="sm:text-xl text-[1rem] font-medium text-paragraphColor">
                   {item.duration}
                 </p>
               </div>
@@ -47,8 +47,8 @@ export default function CourseAndCertification() {
       </div>
       <div className="md:col-span-6 col-span-12 flex flex-col items-center justify-center gap-10">
         <div className="flex flex-col gap-1 items-center">
-          <p className="text-xl font-semibold">My CV</p>
-          <p className="text-xl font-semibold">Download my CV</p>
+          <p className="text-xl font-semibold text-headingColor">My CV</p>
+          <p className="text-xl font-semibold text-headingColor">Download my CV</p>
         </div>
         <a
           download
@@ -56,7 +56,7 @@ export default function CourseAndCertification() {
           className="animate-bounce h-[6rem] w-[6rem] rounded-full bg-[#ededed] shadow-lg flex flex-col items-center justify-center"
         >
           <Download />
-          <p>CV</p>
+          <p className="text-paragraphColor text-[1rem]">CV</p>
         </a>
       </div>
     </div>
