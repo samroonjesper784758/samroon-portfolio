@@ -51,8 +51,7 @@ export default function CourseAndCertification() {
           <p className="text-xl font-semibold text-headingColor">Download my CV</p>
         </div>
         <a
-          download
-          href="/cv.pdf"
+          href="https://drive.google.com/file/d/1kc5swk9TS2SP0-crkOswmC9rxi8Rfnqa/view"
           className="animate-bounce h-[6rem] w-[6rem] rounded-full bg-[#ededed] shadow-lg flex flex-col items-center justify-center"
         >
           <Download />
