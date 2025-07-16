@@ -64,7 +64,7 @@ jobs:
           NEXT_PUBLIC_ENV: production
           NEXT_PUBLIC_REPO_NAME: ${{ github.event.repository.name }}
           NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
-          NEXT_PUBILC_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          NEXT_PUBLIC_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
           NEXT_PUBLIC_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 

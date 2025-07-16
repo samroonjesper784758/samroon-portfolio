@@ -32,14 +32,15 @@ function ContactMe() {
     e.preventDefault();
 
     const form = e.target as HTMLFormElement;
-
+    console.log(process.env.NEXT_PUBLIC_SERVICE_ID)
     if (
-      process.env.NEXT_PUBILC_SERVICE_ID &&
+      process.env.NEXT_PUBLIC_SERVICE_ID &&
       process.env.NEXT_PUBLIC_TEMPLATE_ID
     ) {
+      console.log("clicked")
       emailjs
         .sendForm(
-          process.env.NEXT_PUBILC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_TEMPLATE_ID,
           form
         )
