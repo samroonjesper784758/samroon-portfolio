@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextInputWithLabel from "../components/TextInputWithLabel";
-import Image from "next/image";
 import { assetsImage } from "@/assets/images";
+import emailjs from "@emailjs/browser";
 
 interface FORMDATA {
   firstname: string;
@@ -28,23 +28,35 @@ function ContactMe() {
     });
   };
 
-  const handleSumbit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
 
-      const data = await response.json();
-      alert("Message sent");
-    } catch (error) {
-      alert(error);
+    const form = e.target as HTMLFormElement;
+
+    if (
+      process.env.NEXT_PUBILC_SERVICE_ID &&
+      process.env.NEXT_PUBLIC_TEMPLATE_ID
+    ) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBILC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          form
+        )
+        .then(() => {
+          alert("Message sent");
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Failed to send message: " + error.text);
+        });
     }
   };
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
+      emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+  }, []);
 
   return (
     <div className="w-[95%] mx-auto">
@@ -67,15 +79,17 @@ function ContactMe() {
             Or reach out manually{" "}
             <span className="text-[#4F46E5]">samroon1510@gmail.com</span>
           </p>
-          <form onSubmit={handleSumbit} className="flex flex-col gap-[1rem]">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-[1rem]">
             <div className="flex sm:flex-row flex-col gap-5">
               <TextInputWithLabel
                 title="First Name"
                 placeholder={"Enter first name"}
+                name="firstname"
                 onChange={(e) => handleInputChange("firstname", e.target.value)}
               />
               <TextInputWithLabel
                 title="Last Name"
+                name="lastname"
                 placeholder="Enter last name"
                 onChange={(e) => handleInputChange("lastname", e.target.value)}
               />
@@ -84,6 +98,7 @@ function ContactMe() {
               <TextInputWithLabel
                 title="Email"
                 placeholder="abc@gmail.com"
+                name="email"
                 onChange={(e) => handleInputChange("email", e.target.value)}
               />
             </div>
@@ -91,12 +106,13 @@ function ContactMe() {
               <p className="text-lg font-bold mb-1">Message</p>
               <textarea
                 className="w-full h-32 outline-none border border-gray-300 px-[1rem]"
+                name={"message"}
                 onChange={(e) => handleInputChange("message", e.target.value)}
               />
             </div>
 
             <button
-              className="md:h-[3.5rem] h-[3rem] bg-[#4F46E5] rounded-full w-full md:text-xl text-[1rem] text-white mt-[1rem]"
+              className="md:h-[3.5rem] h-[3rem] bg-[#4F46E5] rounded-full w-full md:text-xl text-[1rem] text-white mt-[1rem] active:brightness-50"
               type="submit"
             >
               Submit

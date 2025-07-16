@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div className="w-[95%] mx-auto bg-[#ffffff] shadow-md border-l-4 border-[#4F46E5] rounded p-5 flex flex-col gap-3">
-      <p className="sm:text-2xl text-xl font-semibold">👋 About</p>
+      <p className="sm:text-2xl text-xl font-semibold text-headingColor">👋 About</p>
       <p className="sm:text-lg text-md text-justify font-light text-paragraphColor">
         I'm <span className="text-primaryColor font-medium">Samroon Jesper</span>,
         a passionate{" "}
